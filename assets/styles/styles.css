@@ -1,0 +1,500 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     /* Prevents horizontal scrolling */
+  }
+  section.banner-section{
+    position: relative;
+    z-index: 10;
+  }
+  section.banner-section .showcase {
+    width: 100%;
+    height: 92vh;
+    position: relative;
+    text-align: center;
+    overflow: hidden; /* Ensure content stays within the showcase */
+    overflow-x: hidden;
+  }
+  
+  section.banner-section .showcase .background-image {
+    background-image: url('/assets/images/banner.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 92vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+  
+    /* Add animation for zoom-in effect */
+    animation: zoomIn 1s ease-in-out forwards;
+  }
+  
+  /* Zoom-in keyframe animation */
+  @keyframes zoomIn {
+    0% {
+      transform: scale(1.2); /* Start with a slightly larger scale */
+    }
+    100% {
+      transform: scale(1); /* End at the original size */
+    }
+  }
+  
+  section.banner-section .showcase .overlay {
+    width: 100%;
+    height: 92vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    overflow: hidden; /* Ensures overlay contains the background image */
+  }
+  section.banner-section .showcase .overlay .content h1 {
+    font-size: 5rem;
+  }
+
+  section.products .button-wrapper {
+    display: flex;
+    gap: 20px; /* Adds space between the buttons */
+  }
+  
+ .attract-button {
+    position: relative;
+    transition: transform 0.1s ease-in-out;
+  }
+  
+.attract-button:hover {
+    transform: scale(1.1);
+  }
+  section.products{
+    margin-top: -35px;
+    position: relative;
+    z-index: 10;
+    background-color: white;
+  }
+  button.grow_box {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0.5rem; /* Ensure button has a border radius */
+    opacity: 0.3;
+    padding: 0.85em 0.75em;
+  }
+  button.grow_box:hover,button.grow_box:hover>*{
+    opacity: 1!important;
+  }
+  button.grow_box::before {
+    overflow: hidden;
+    border-radius: .5rem; /* Inherit the button's border-radius */
+    content: "";
+    background-image: linear-gradient(to right, #d7d7d7 , #ffffff)!important; /* Semi-transparent black */
+    position: absolute;
+    z-index: -1;
+    padding: 0.85em 0.75em;
+    transform: scale(0); /* For the scaling effect */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 0.3s ease;
+
+  }
+  button.grow_box:hover::before {
+    transform: scale(1);
+    transition: all 0.3s ease-out;
+  }
+
+/* .dropdown-menu-end{
+    width: 330px !important;
+} */
+.muted{
+    opacity: 0.4;
+}
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: all 0.5s ease;
+}
+
+.dropdown-menus {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  padding: 30px;
+  overflow: hidden;
+  max-height: 0px;
+  min-width: 0px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.dropdown-menus.show {
+  max-height: 500px; /* Adjust as needed */
+  min-width: 330px; /* Adjust as needed */
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.5s ease;
+
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color:inherit !important;
+}
+.dropdown-item:focus span, .dropdown-item:hover span {
+    background-color:inherit !important;
+    border-bottom: 1px solid white;
+}
+.dropdown-dot{
+  font-size: 6px;
+}
+#dropdownButton:hover .dropdown-dot{
+  color: white!important;
+}
+
+/*Cards Section*//********/
+.product-card{
+    background-color: #FAFAFA;
+    /* background-color: green; */
+    border-radius: 20px;
+  }
+  /* / Initially display the rating button / */
+  .button-rating {
+    display: inline-block;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+  }
+  
+  /* / Initially hide the details button / */
+  .button-details {
+    display: none;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* / When hovering over the product card / */
+  .product-card:hover .button-rating {
+    opacity: 0;
+    display: none;
+  }
+  
+  .product-card:hover .button-details {
+    display: inline-block;
+    opacity: 1;
+  }
+
+  .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #000000;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .animated-cart-button{
+    transform: scaleY(0);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  .product-card:hover .animated-cart-button{
+    transform: scaleY(-100);
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  .animating-bg {
+    position: relative;
+    z-index: 10; /* Ensure the button content is above the background */
+    overflow: hidden; /* Ensure the ::after element doesn’t overflow outside the button */
+  }
+  .animating-bg:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: scaleY(0);
+    background-color: #000000; /* Background color for the hover animation */
+    transform-origin: top;
+    transition: transform 0.5s ease-out;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure the background stays behind the button content */
+  }
+  .animating-bg:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: scaleY(0);
+    background-color: #000000; /* Background color for the hover animation */
+    transform-origin: top;
+    transition: transform .5s ease;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure the background stays behind the button content */
+  }
+  .animating-bg:hover:before {
+    transform: scaleY(1);
+    transform-origin: bottom;
+   }
+  .animating-bg:hover{
+    color: white;
+  }
+  .animating-bg:hover:after {
+    transform: scaleY(1);
+    transform-origin: bottom;
+   }
+  .image-box{
+    height: 50vh;
+   }
+   @media only screen and (max-width:1300px) {
+    .image-box{
+      height: auto !important;
+     }
+     .main-heading{
+      font-size: 80px !important;
+    }
+   }
+
+  @media only screen and (min-width: 1300px) {
+    .image-box:hover .product-image{
+      display: none;
+    }
+    .image-box:hover .swiper-container{
+      display: block!important;
+    }
+  }
+
+  .swiper-container {
+    display: none;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* Space between sliders */
+    overflow: hidden;
+}
+
+.swiper-slide {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    background: #eee; /* Background color for slides */
+}
+.swiper-pagination{
+    bottom: var(--swiper-pagination-bottom,40px)!important;
+}
+.homeicon{
+  height: 25px;
+}
+.homeicon:hover .iconsimple{
+  display: none;
+}
+.iconfill{
+ display: none;
+}
+.homeicon:hover .iconfill{
+  display: block;
+}
+section.subcategory-banner{
+  position: relative;
+  width: 100%;
+}
+@media only screen and (max-width:550px) {
+  .main-heading{
+    font-size: 50px!important;
+  }
+}
+.main-heading{
+  font-size: 150px;
+}
+.menus {
+	padding: 5vh;
+}
+
+.marquee {
+	position: absolute;
+	top: 50%;
+  transform: translateY(-50%);
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	pointer-events: none;
+  color: #000;
+}
+
+.marquee__inner {
+	width: fit-content;
+	display: flex;
+	position: relative;
+	transform: translate3d(calc(-25% + 20vw), 0, 0);
+	animation: marquee 80s linear infinite;
+	animation-play-state: paused;
+	opacity: 0;
+	transition: opacity 0.1s;
+}
+
+.marquee .marquee__inner {
+	animation-play-state: running;
+	opacity: 1;
+	transition-duration: 0.4s;
+}
+
+.marquee span {
+  text-align: center;
+	white-space: nowrap;
+	font-size: 15vw;
+	padding: 0 1vw;
+	font-weight: 700;
+	line-height: 1.15;
+  opacity: 0.025;
+}
+
+@keyframes marquee {
+	0% {
+		transform: translate3d(calc(-25% + 20vw), 0, 0);
+	}
+
+	100% {
+		transform: translate3d(calc(-50% + 20vw), 0, 0);
+	}
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.qty {
+	display: flex;
+  align-items: end;
+}
+	input {
+		/* width: 7rem; height: 3rem;	 */
+		/* font-size: 1.3rem; */
+		text-align: center;
+	}
+
+
+  .animating-bg-reverse {
+    position: relative;
+    z-index: 10; /* Ensure the button content is above the background */
+    overflow: hidden; /* Ensure the ::after element doesn’t overflow outside the button */
+  }
+  .animating-bg-reverse:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: scaleY(0);
+    background-color: white; /* Background color for the hover animation */
+    transform-origin: top;
+    transition: transform 0.5s ease-out;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure the background stays behind the button content */
+  }
+  .animating-bg-reverse:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: scaleY(0);
+    background-color: white; /* Background color for the hover animation */
+    transform-origin: top;
+    transition: transform .5s ease;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure the background stays behind the button content */
+  }
+  .animating-bg-reverse:hover:before {
+    transform: scaleY(1);
+    transform-origin: bottom;
+   }
+  .animating-bg-reverse:hover{
+    color: black;
+  }
+  .animating-bg-reverse:hover:after {
+    transform: scaleY(1);
+    transform-origin: bottom;
+   }
+
+
+   .hover-underline-reverse {
+    display: inline-block;
+    position: relative;
+    color: #000000;
+  }
+  
+  .hover-underline-reverse:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(1);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom left;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .animation-main:hover .hover-underline-reverse:after {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+
+  .pairproduct {
+    width: 100%;
+    height: 100%;
+  }
+  .imagezoom{
+    transform: scale(1,1);
+    transition: transform 0.3s ease;
+  }
+  .imagetrigger:hover .imagezoom{
+    transform: scale(1.1,1.1);
+    transition: transform 0.3s ease;
+  }
+
+  .offcanvas.offcanvas-bottom {
+    height: 90vh !important;
+  }

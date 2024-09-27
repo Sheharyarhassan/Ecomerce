@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Shop Page</title>
+	<!-- All Libraries & Bootstrap Links & CDNs -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<!-- All Libraries & Bootstrap Links & CDNs -->
+
+	<!-- Custom CSS File Link -->
+	<link rel="stylesheet" type="text/css" href="./assets/styles/styles.css" />
+</head>
+
+<body>
+
+	<section class="banner-section">
+		<div class="showcase">
+			<div class="background-image"></div>
+			<div class="overlay d-flex align-items-end">
+				<div class="content m-4 py-5">
+					<div class="d-flex align-items-center">
+						<a href="#" class="homeicon attract-button ">
+							<i class='iconsimple bx bx-home-alt-2 text-white h5 mb-0'></i>
+							<i class='iconfill bx bxs-home text-white h5 mb-0'></i>
+						</a>
+
+						<p class="text-muted mx-3 mb-0">/</p>
+						<a href="#" class="text-white mb-0 attract-button text-decoration-none py-2">Collections</a>
+						<p class="text-muted mx-3 mb-0">/</p>
+						<p class="text-white mb-0">All products</p>
+					</div>
+					<div data-aos="fade-up">
+						<span class="text-white fw-bold main-heading">All products</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="products rounded-top-5 pt-5">
+		<div class="row justify-content-between align-items-center w-100 px-3">
+			<div class="col-lg-9 col-sm-6 d-sm-flex d-none justify-content-start flex-wrap">
+				<button class="btn animating-bg border border-2 fw-medium fs-5 rounded-5" type="button"
+					data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+					<i class="bx bx-slider-alt"></i>
+					Show filters
+				</button>
+				<div class="d-flex flex-wrap gap-3 align-items-center text-body-tertiary d-lg-block d-none">
+					<button class="grow_box fw-medium fs-5 rounded-5" onclick="location.href = '../SubCategory.html'">
+						HeadPhones<sup> 15</sup></button><span class="fs-5">/</span>
+					<button class="grow_box fw-medium fs-5 rounded-5" onclick="location.href = '../SubCategory.html'">
+						EarPhones<sup> 8</sup></button><span class="fs-5">/</span>
+					<button class="grow_box fw-medium fs-5 rounded-5" onclick="location.href = '../SubCategory.html'">
+						Speaker<sup> 11</sup></button><span class="fs-5">/</span>
+					<button class="grow_box fw-medium fs-5 rounded-5" onclick="location.href = '../SubCategory.html'">
+						Accessories<sup> 7</sup>
+					</button>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 d-sm-flex d-none justify-content-end align-items-center p-0">
+				<span class="me-3 fs-6 fw-medium">Sort by:</span>
+				<div class="dropdown-container">
+					<button class="btn animating-bg border border-2 fw-medium fs-5 rounded-5 d-flex align-items-center"
+						id="dropdownButton">
+						Best Selling
+						<i class="bx bxs-circle dropdown-dot ms-3" style="color: black"></i>
+					</button>
+					<ul class="dropdown-menus list-unstyled" id="dropdownMenu">
+						<div class="d-flex justify-content-between align-items-center ">
+							<span class="text-white muted">SORT BY</span>
+							<button class="rounded-circle px-2 py-1" id="closeDropdown">
+								<i class="bx bx-x fs-5 align-text-bottom"></i>
+							</button>
+						</div>
+						<li class="h5 mb-2">
+							<button class="dropdown-item text-white" type="button">
+								<span>Featured</span>
+							</button>
+						</li>
+						<li class="h5 mb-2">
+							<button
+								class="dropdown-item text-white muted d-flex align-items-center justify-content-between"
+								type="button" disabled>
+								<span>Best Selling</span>
+								<i class="bx bxs-circle dropdown-dot ms-3" style="color: white"></i>
+							</button>
+						</li>
+						<li class="h5 mb-2">
+							<button class="dropdown-item text-white" type="button">
+								<span>Alphabetically, A-Z</span>
+							</button>
+						</li>
+						<li class="h5 mb-2">
+							<button class="dropdown-item text-white" type="button">
+								<span>Alphabetically, Z-A</span>
+							</button>
+						</li>
+						<li class="h5 mb-2">
+							<button class="dropdown-item text-white" type="button">
+								<span>Price, low to high</span>
+							</button>
+						</li>
+						<li class="h5 mb-2">
+							<button class="dropdown-item text-white" type="button">
+								<span>Price, high to low</span>
+							</button>
+						</li>
+						<li class="h5 mb-2">
+							<button class="dropdown-item text-white" type="button">
+								<span>Date, old to new</span>
+							</button>
+						</li>
+						<li class="h5 mb-2">
+							<button class="dropdown-item text-white" type="button">
+								<span>Date, new to old</span>
+							</button>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+	</section>
+	<section class="mt-5 mb-5 products-cards-section">
+		<div class="container-fluid">
+			<div class="row row-gap-4">
+				<div class="col-xl-3 col-md-4 col-sm-6">
+					<a href="/ProductDetail.html" class="text-decoration-none">
+						<div class="product-card bg-muted p-2">
+							<div class="image-box position-relative text-center">
+								<div class="rating-star position-absolute top-0 end-0 mt-4 me-3">
+									<button type="button"
+										class="btn border border-2 rounded-circle button-details animating-bg">
+										<i class="bx bxs-show"></i>
+									</button>
+									<button type="button" class="btn bg-white rounded-pill button-rating">
+										<i class="bx bxs-star"></i> 5.0
+									</button>
+								</div>
+								<button
+									class="btn d-md-block d-none animating-bg border border-2 animated-cart-button rounded-pill position-absolute bottom-0 start-50 translate-middle-x">
+									Add To Cart
+								</button>
+								<button
+									class="btn d-md-none d-block animating-bg border border-2 animated-cart-button rounded-pill position-absolute bottom-0 end-0 translate-middle-x">
+									<i class="bx bx-cart"></i>
+								</button>
+								<img src="/assets/images/sonicpulse-airbeats-goldtone-01_fcc0297c-9b4d-47d8-b425-9ab2705220c5.jpg"
+									class="mw-100 h-auto product-image" />
+								<div class="swiper-container">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="/assets/images/sonicpulse-airbeats-goldtone-02.jpg" alt=""
+												class="mw-100 h-auto" />
+										</div>
+										<div class="swiper-slide">
+											<img src="/assets/images/sonicpulse-airbeats-goldtone-03.jpg" alt=""
+												class="mw-100 h-auto" />
+										</div>
+										<div class="swiper-slide">
+											<img src="/assets/images/sonicpulse-airbeats-goldtone-04.jpg" alt=""
+												class="mw-100 h-auto" />
+										</div>
+										<!-- Add more slides as needed -->
+									</div>
+									<!-- Add Pagination -->
+									<div class="swiper-pagination"></div>
+								</div>
+
+							</div>
+							<div class="content-box py-3 px-sm-4 px-2">
+								<small class="text-muted hover-underline-animation">SONICPLUS</small>
+								<div class="d-flex justify-content-between flex-wrap">
+									<span class="fw-semibold fs-5 text-black hover-underline-animation">
+										Air Beats Gold Tone
+									</span>
+									<p class="fs-5 fw-normal text-black">Rs.1,41,000</p>
+								</div>
+								<div class="color-section">
+									<ul class="list-unstyled d-flex">
+										<li class="me-2">
+											<a href="#">
+												<span class="p-2 rounded-circle bg-black d-inline-block"
+													style="width: 20px; height: 20px"></span>
+											</a>
+										</li>
+										<li class="me-2">
+											<a href="#">
+												<span class="p-2 rounded-circle bg-danger d-inline-block"
+													style="width: 20px; height: 20px"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="p-2 rounded-circle bg-primary bg-blue d-inline-block"
+													style="width: 20px; height: 20px"></span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-xl-3 col-md-4 col-sm-6">
+					<a href="/ProductDetail.html" class="text-decoration-none">
+						<div class="product-card bg-muted p-2">
+							<div class="image-box position-relative text-center">
+								<div class="rating-star position-absolute top-0 end-0 mt-4 me-3">
+									<button type="button"
+										class="btn border border-2 rounded-circle button-details animating-bg">
+										<i class="bx bxs-show"></i>
+									</button>
+									<button type="button" class="btn bg-white rounded-pill button-rating">
+										<i class="bx bxs-star"></i> 5.0
+									</button>
+								</div>
+								<button
+									class="btn d-md-block d-none animating-bg border border-2 animated-cart-button rounded-pill position-absolute bottom-0 start-50 translate-middle-x">
+									Add To Cart
+								</button>
+								<button
+									class="btn d-md-none d-block animating-bg border border-2 animated-cart-button rounded-pill position-absolute bottom-0 end-0 translate-middle-x">
+									<i class="bx bx-cart"></i>
+								</button>
+								<img src="/assets/images/sonicpulse-airbeats-goldtone-01_fcc0297c-9b4d-47d8-b425-9ab2705220c5.jpg"
+									class="mw-100 h-auto product-image" />
+								<div class="swiper-container">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="/assets/images/sonicpulse-airbeats-goldtone-02.jpg" alt=""
+												class="mw-100 h-auto" />
+										</div>
+										<div class="swiper-slide">
+											<img src="/assets/images/sonicpulse-airbeats-goldtone-03.jpg" alt=""
+												class="mw-100 h-auto" />
+										</div>
+										<div class="swiper-slide">
+											<img src="/assets/images/sonicpulse-airbeats-goldtone-04.jpg" alt=""
+												class="mw-100 h-auto" />
+										</div>
+										<!-- Add more slides as needed -->
+									</div>
+									<!-- Add Pagination -->
+									<div class="swiper-pagination"></div>
+								</div>
+
+							</div>
+							<div class="content-box py-3 px-sm-4 px-2">
+								<small class="text-muted hover-underline-animation">SONICPLUS</small>
+								<div class="d-flex justify-content-between flex-wrap">
+									<span class="fw-semibold fs-5 text-black hover-underline-animation">
+										Air Beats Gold Tone
+									</span>
+									<p class="fs-5 fw-normal text-black">Rs.1,41,000</p>
+								</div>
+								<div class="color-section">
+									<ul class="list-unstyled d-flex">
+										<li class="me-2">
+											<a href="#">
+												<span class="p-2 rounded-circle bg-black d-inline-block"
+													style="width: 20px; height: 20px"></span>
+											</a>
+										</li>
+										<li class="me-2">
+											<a href="#">
+												<span class="p-2 rounded-circle bg-danger d-inline-block"
+													style="width: 20px; height: 20px"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="p-2 rounded-circle bg-primary bg-blue d-inline-block"
+													style="width: 20px; height: 20px"></span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-xl-3 col-md-4 col-sm-6">
+					<a href="/ProductDetail.html" class="text-decoration-none">
+						<div class="product-card bg-muted p-2">
+							<div class="image-box position-relative text-center">
+								<div class="rating-star position-absolute top-0 end-0 mt-4 me-3">
+									<button type="button"
+										class="btn border border-2 rounded-circle button-details animating-bg">
+										<i class="bx bxs-show"></i>
+									</button>
+									<button type="button" class="btn bg-white rounded-pill button-rating">
+										<i class="bx bxs-star"></i> 5.0
+									</button>
+								</div>
+								<button
+									class="btn d-md-block d-none animating-bg border border-2 animated-cart-button rounded-pill position-absolute bottom-0 start-50 translate-middle-x">
+									Add To Cart
+								</button>
+								<button
+									class="btn d-md-none d-block animating-bg border border-2 animated-cart-button rounded-pill position-absolute bottom-0 end-0 translate-middle-x">
+									<i class="bx bx-cart"></i>
+								</button>
+								<img src="/assets/images/sonicpulse-airbeats-goldtone-01_fcc0297c-9b4d-47d8-b425-9ab2705220c5.jpg"
+									class="mw-100 h-auto product-image" />
+								<div class="swiper-container">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="/assets/images/sonicpulse-airbeats-goldtone-02.jpg" alt=""
+												class="mw-100 h-auto" />
+										</div>
+										<div class="swiper-slide">
+											<img src="/assets/images/sonicpulse-airbeats-goldtone-03.jpg" alt=""
+												class="mw-100 h-auto" />
+										</div>
+										<div class="swiper-slide">
+											<img src="/assets/images/sonicpulse-airbeats-goldtone-04.jpg" alt=""
+												class="mw-100 h-auto" />
+										</div>
+										<!-- Add more slides as needed -->
+									</div>
+									<!-- Add Pagination -->
+									<div class="swiper-pagination"></div>
+								</div>
+
+							</div>
+							<div class="content-box py-3 px-sm-4 px-2">
+								<small class="text-muted hover-underline-animation">SONICPLUS</small>
+								<div class="d-flex justify-content-between flex-wrap">
+									<span class="fw-semibold fs-5 text-black hover-underline-animation">
+										Air Beats Gold Tone
+									</span>
+									<p class="fs-5 fw-normal text-black">Rs.1,41,000</p>
+								</div>
+								<div class="color-section">
+									<ul class="list-unstyled d-flex">
+										<li class="me-2">
+											<a href="#">
+												<span class="p-2 rounded-circle bg-black d-inline-block"
+													style="width: 20px; height: 20px"></span>
+											</a>
+										</li>
+										<li class="me-2">
+											<a href="#">
+												<span class="p-2 rounded-circle bg-danger d-inline-block"
+													style="width: 20px; height: 20px"></span>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<span class="p-2 rounded-circle bg-primary bg-blue d-inline-block"
+													style="width: 20px; height: 20px"></span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="offcanvas offcanvas-start rounded-start rounded-5" tabindex="-1" id="offcanvasExample"
+		aria-labelledby="offcanvasExampleLabel">
+		<div class="offcanvas-header border-bottom px-4 d-flex justify-content-between">
+			<h3 class="offcanvas-title fw-bolder" id="offcanvasExampleLabel">
+				Filters
+			</h3>
+			<button type="button" class="btn animating-bg border border-2 rounded-circle m-0 py-0 px-1"
+				data-bs-dismiss="offcanvas" aria-label="Close">
+				<i class="bx bx-x fs-5 align-text-bottom"></i>
+			</button>
+		</div>
+		<div class="offcanvas-body px-4">
+			<div class="accordion accordion-flush mb-3" id="accordionFlushExample">
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button collapsed fw-medium fs-5" type="button"
+							data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false"
+							aria-controls="flush-collapseOne">
+							Brand
+						</button>
+					</h2>
+					<div id="flush-collapseOne" class="accordion-collapse collapse show ps-4">
+						<div class="form-check my-2">
+							<input class="form-check-input" type="checkbox" value="" id="Aureal" />
+							<label class="form-check-label" for="Aureal">
+								Aureal <span class="small text-muted">(7)</span>
+							</label>
+						</div>
+						<div class="form-check my-2">
+							<input class="form-check-input" type="checkbox" value="" id="Other" />
+							<label class="form-check-label" for="Other">
+								Other <span class="small text-muted">(1)</span>
+							</label>
+						</div>
+						<div class="form-check my-2">
+							<input class="form-check-input" type="checkbox" value="" id="Resonance" />
+							<label class="form-check-label" for="Resonance">
+								Resonance <span class="small text-muted">(9)</span>
+							</label>
+						</div>
+						<div class="form-check my-2">
+							<input class="form-check-input" type="checkbox" value="" id="SonicPulse" />
+							<label class="form-check-label" for="SonicPulse">
+								SonicPulse <span class="small text-muted">(14)</span>
+							</label>
+						</div>
+						<div class="form-check my-2">
+							<input class="form-check-input" type="checkbox" value="" id="SoundSphere" />
+							<label class="form-check-label" for="SoundSphere">
+								SoundSphere <span class="small text-muted">(4)</span>
+							</label>
+						</div>
+						<div class="form-check mt-2 mb-4">
+							<input class="form-check-input" type="checkbox" value="" id="Vibrance" />
+							<label class="form-check-label" for="Vibrance">
+								Vibrance <span class="small text-muted">(7)</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<div class="d-flex justify-content-between align-items-center py-3">
+						<div class="form-check">
+							<label class="form-check-label fw-medium fs-5" for="Instock">In stock only</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="Instock" />
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item border-bottom">
+					<h2 class="accordion-header">
+						<button class="accordion-button collapsed ps-4 fw-medium fs-5" type="button"
+							data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false"
+							aria-controls="flush-collapseThree">
+							Color
+						</button>
+					</h2>
+					<div id="flush-collapseThree" class="accordion-collapse collapse show">
+						<div class="accordion-body">
+							<div class="d-flex flex-wrap button-wrapper">
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: chocolate"></button>
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: brown"></button>
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: olive"></button>
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: crimson"></button>
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: darkkhaki"></button>
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: darkslateblue"></button>
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: darkslategrey"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="btn btn-lg animating-bg border border-2 w-100 rounded-5">Apply</button>
+		</div>
+	</div>
+	<div class="fixed-bottom start-50 translate-middle-x mb-3 d-sm-none d-block" style="width: fit-content;">
+		<button class="btn btn-dark animating-bg-reverse border border-dark border-2 fw-medium rounded-5" type="button"
+			data-bs-toggle="offcanvas" data-bs-target="#offcanvasMobile" aria-controls="offcanvasMobile">
+			<i class="bx bx-slider-alt"></i>
+			Filter and sort
+		</button>
+	</div>
+	<div class="offcanvas offcanvas-bottom rounded-bottom rounded-5" tabindex="-1" id="offcanvasMobile"
+		aria-labelledby="offcanvasMobileLabel">
+		<div class="offcanvas-header border-bottom px-4 d-flex justify-content-between">
+			<h3 class="offcanvas-title fw-bolder" id="offcanvasMobileLabel">
+				Filters
+			</h3>
+			<button type="button" class="btn animating-bg border border-2 rounded-circle m-0 py-0 px-1"
+				data-bs-dismiss="offcanvas" aria-label="Close">
+				<i class="bx bx-x fs-5 align-text-bottom"></i>
+			</button>
+		</div>
+		<div class="offcanvas-body px-4">
+			<form class="form-floating bg-body-tertiary">
+				<label for="floatingInputValue fw-semibold" style="font-size:13px">Sort By</label>
+				<select class="form-select form-select bg-body-tertiary" style="height: 70px;">
+					<option value="Featured">Featured</option>
+					<option selected value="BestSelling">Best Selling</option>
+					<option value="A-Z">Alphabetically, A-Z</option>
+					<option value="Z-A">Alphabetically, Z-A</option>
+					<option value="L-H">Price, low to high</option>
+					<option value="H-L">Price, high to low</option>
+					<option value="O-N">Date, old to new</option>
+					<option value="N-O">Date, new to old</option>
+				</select>
+			</form>
+			<div class="accordion accordion-flush mb-3" id="accordionMobile">
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button collapsed fw-medium fs-5" type="button"
+							data-bs-toggle="collapse" data-bs-target="#accordionMobile-collapseOne"
+							aria-expanded="false" aria-controls="accordionMobile-collapseOne">
+							Brand
+						</button>
+					</h2>
+					<div id="accordionMobile-collapseOne" class="accordion-collapse collapse show ps-4">
+						<div class="form-check my-2">
+							<input class="form-check-input" type="checkbox" value="" id="Aureal" />
+							<label class="form-check-label" for="Aureal">
+								Aureal <span class="small text-muted">(7)</span>
+							</label>
+						</div>
+						<div class="form-check my-2">
+							<input class="form-check-input" type="checkbox" value="" id="Other" />
+							<label class="form-check-label" for="Other">
+								Other <span class="small text-muted">(1)</span>
+							</label>
+						</div>
+						<div class="form-check my-2">
+							<input class="form-check-input" type="checkbox" value="" id="Resonance" />
+							<label class="form-check-label" for="Resonance">
+								Resonance <span class="small text-muted">(9)</span>
+							</label>
+						</div>
+						<div class="form-check my-2">
+							<input class="form-check-input" type="checkbox" value="" id="SonicPulse" />
+							<label class="form-check-label" for="SonicPulse">
+								SonicPulse <span class="small text-muted">(14)</span>
+							</label>
+						</div>
+						<div class="form-check my-2">
+							<input class="form-check-input" type="checkbox" value="" id="SoundSphere" />
+							<label class="form-check-label" for="SoundSphere">
+								SoundSphere <span class="small text-muted">(4)</span>
+							</label>
+						</div>
+						<div class="form-check mt-2 mb-4">
+							<input class="form-check-input" type="checkbox" value="" id="Vibrance" />
+							<label class="form-check-label" for="Vibrance">
+								Vibrance <span class="small text-muted">(7)</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<div class="d-flex justify-content-between align-items-center py-3">
+						<div class="form-check">
+							<label class="form-check-label fw-medium fs-5" for="Instock">In stock only</label>
+						</div>
+						<div class="form-check form-switch">
+							<input class="form-check-input" type="checkbox" role="switch" id="Instock" />
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item border-bottom">
+					<h2 class="accordion-header">
+						<button class="accordion-button collapsed ps-4 fw-medium fs-5" type="button"
+							data-bs-toggle="collapse" data-bs-target="#accordionMobile-collapseThree"
+							aria-expanded="false" aria-controls="accordionMobile-collapseThree">
+							Color
+						</button>
+					</h2>
+					<div id="accordionMobile-collapseThree" class="accordion-collapse collapse show">
+						<div class="accordion-body">
+							<div class="d-flex flex-wrap button-wrapper">
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: chocolate"></button>
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: brown"></button>
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: olive"></button>
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: crimson"></button>
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: darkkhaki"></button>
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: darkslateblue"></button>
+								<button class="attract-button rounded-circle me-2 p-3 border"
+									style="background-color: darkslategrey"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="btn btn-lg animating-bg border border-2 w-100 rounded-5">Apply</button>
+		</div>
+	</div>
+
+	<script src="./assets/script/script.js"></script>
+</body>
+
+</html>
